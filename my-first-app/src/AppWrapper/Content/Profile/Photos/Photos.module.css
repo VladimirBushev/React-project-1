@@ -1,0 +1,38 @@
+.div {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.photos {
+    grid-area: Pho;
+}
+
+.photosBar {
+    width: 100%;    
+    height: 76%;
+    text-align: center;
+}
+
+.photo {
+    display: inline;
+    width: 100%;
+    height: 100%;
+}
+
+.photo img {
+    width: 18%;
+    height: 92%;
+    margin: 12px 6px 0 6px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.div span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+

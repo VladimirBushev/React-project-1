@@ -1,0 +1,40 @@
+.profileInfo {
+    grid-area: Prof;
+    font-size: 20px;
+}
+
+.profileInfo div {
+    padding: 10px;
+}
+
+.div {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.status {
+    font-size: 20px;
+}
+
+.input {
+    width: 99%;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    border-radius: 5px;
+}
+
+.statusDiv {
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168 168 168);
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,20 @@
+.div:hover {
+    cursor: pointer;
+    background-color: rgb(207, 214, 255);   
+    border-radius: 7px;
+    border: 2px solid;
+    border-color: rgb(241, 241, 241);
+}
+.div {
+    padding: 5px;
+    border: 2px solid;
+    border-color: rgb(241, 241, 241);
+}
+.div a {
+    padding: 5px;
+}
+
+.active .div {
+    background-color: rgb(207, 214, 255);   
+    border-radius: 7px;
+}

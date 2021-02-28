@@ -1,0 +1,13 @@
+.nav {
+    padding: 10px;
+    font-size: 20px;
+    grid-area: n;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    position: fixed;
+    margin-top: 10px;
+}
+.nav a{
+    text-decoration: none;
+    color: rgb(0, 0, 73);
+}

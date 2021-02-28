@@ -1,0 +1,23 @@
+.post {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: 
+    'img tex';
+}
+.img {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    grid-area: img;
+    cursor: pointer;
+}
+.text {
+    grid-area: tex;
+    font-size: 25px;
+}

@@ -1,0 +1,36 @@
+.div {
+    font-size: 30px;
+    padding: 10px;
+    border-bottom: 2px solid;
+    border-color: rgb(233, 233, 233);
+    display: grid;
+    grid-template-columns: 15% 80% 5%;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: 
+    'i n time'
+    'i t t';
+}
+.img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    grid-area: i;
+}
+.name {
+    grid-area: n;
+}
+
+.text {
+    grid-area: t;
+    font-size: 25px;
+    margin: 10px 0 0 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 73);
+}
+.time {
+    font-size: 20px;
+    grid-area: time;
+}

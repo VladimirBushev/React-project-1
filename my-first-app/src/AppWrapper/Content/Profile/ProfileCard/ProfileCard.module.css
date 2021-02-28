@@ -1,0 +1,41 @@
+.profileCard {
+    grid-area: ProfCard;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    padding: 15px;
+}
+
+.button{
+    background-color: rgb(241, 241, 241);
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209);
+}
+
+.button:hover{
+    background-color: rgb(210, 210, 255);
+}
+.profileImg {
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.div {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 30px;
+}

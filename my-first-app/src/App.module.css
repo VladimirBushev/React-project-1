@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(241, 241, 241);
+    color: rgb(0, 0, 73);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.div {
+    height: 90%;
+}

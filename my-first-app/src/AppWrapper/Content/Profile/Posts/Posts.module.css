@@ -1,0 +1,40 @@
+.header {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 5px 5px 0 0;
+    font-size: 30px;
+    border-bottom: 2px solid;
+    border-color: rgb(224, 224, 224);
+}
+
+.posts {
+    grid-area: posts;
+}
+
+.input {
+    font-size: 30px;
+    width: 70%;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: rgb(241, 241, 241);
+    border-color: white;
+    outline: none;
+}
+
+.header button {
+    width: 20%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 7px;
+    vertical-align: bottom;
+    margin-left: 20px;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    background-color: rgb(241, 241, 241);
+}
+
+.header button:hover{
+    background-color: rgb(210, 210, 255);
+}

@@ -1,0 +1,11 @@
+.block {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center  ;
+}
+
+.block span:hover {
+    cursor: pointer;
+    font-size: 35px;
+    transition: all 0.3s ease 0s;
+}

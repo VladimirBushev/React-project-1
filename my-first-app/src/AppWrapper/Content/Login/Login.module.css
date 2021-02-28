@@ -1,0 +1,48 @@
+.wrapper {
+    padding: 20px;
+}
+
+.header {
+    padding-left: 10px;
+}
+
+
+.button, .input {
+    margin: 10px;
+    font-size: 25px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    color: rgb(0, 0, 73);
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+}
+
+.button:hover {
+    background-color: rgb(207, 214, 255);
+    cursor: pointer;
+}
+
+.input {
+    display: inline-block;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+}
+
+.checkboxLabel {
+    font-size: 25px;
+    display: inline-block;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 10px;
+}
+.error {
+    color: red;
+    font-size: 20px;
+    display: inline-block;
+    margin: 0 auto;
+}

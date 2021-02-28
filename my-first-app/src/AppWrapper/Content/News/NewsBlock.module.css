@@ -1,0 +1,16 @@
+.div {
+    width: 100%;
+    font-size: 30px;
+    background-color: white;    
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    padding: 15px;
+}
+
+
+.span {
+    display: block;
+    font-size: 20px;
+}

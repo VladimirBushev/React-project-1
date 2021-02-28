@@ -1,0 +1,33 @@
+.friends {
+    grid-area: Frn;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.friends span{
+    display: inline-block;
+
+}
+
+.friends .friendsA {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.friends img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.div {
+    display: inline-block;
+    text-align: center;
+    margin: 0 4px 3px 4px;
+}

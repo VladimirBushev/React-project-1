@@ -1,0 +1,64 @@
+.wrapper {
+    display: inline-block;
+    width: 50%;
+}
+
+.img {
+    display: inline;
+    grid-area: i;
+}
+
+.img img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.name {
+    font-size: 20px;
+    text-align:  center;
+    display: inline;
+    vertical-align: top;
+    grid-area: n;
+    padding-top: 30px;
+}
+
+.div {
+    display: grid;
+    grid-template-areas: 
+    'i n'
+    'i b';
+    background-color: white;
+    box-shadow: 2px 4px rgb(200, 200, 200);
+    padding: 10px;
+    margin: 10px 14px 10px 14px;
+    width: 90%;
+    border-radius: 7px;
+    height: 200px;
+}
+
+.img img:hover {
+    cursor: pointer;
+}
+
+.button {
+    text-align: center;
+    grid-area: b;
+}
+
+.button button {
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10%;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    background-color: rgb(241, 241, 241);
+}
+
+.button button:hover{
+    background-color: rgb(210, 210, 255);
+    cursor: pointer;
+}
