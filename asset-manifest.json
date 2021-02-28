@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c5609ccc.chunk.css",
-    "main.js": "/static/js/main.6628d8a3.chunk.js",
-    "main.js.map": "/static/js/main.6628d8a3.chunk.js.map",
+    "main.js": "/static/js/main.c7c7da0f.chunk.js",
+    "main.js.map": "/static/js/main.c7c7da0f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.da04aa70.js",
     "runtime-main.js.map": "/static/js/runtime-main.da04aa70.js.map",
     "static/js/2.b42382eb.chunk.js": "/static/js/2.b42382eb.chunk.js",
@@ -18,13 +18,20 @@
     "static/css/4.2d1c1612.chunk.css.map": "/static/css/4.2d1c1612.chunk.css.map",
     "static/css/main.c5609ccc.chunk.css.map": "/static/css/main.c5609ccc.chunk.css.map",
     "static/js/3.ce28992e.chunk.js.LICENSE.txt": "/static/js/3.ce28992e.chunk.js.LICENSE.txt",
+    "static/media/barsik.43d2aafb.jpg": "/static/media/barsik.43d2aafb.jpg",
     "static/media/camera.77e62bce.jpg": "/static/media/camera.77e62bce.jpg",
-    "static/media/loader.34fd5549.svg": "/static/media/loader.34fd5549.svg"
+    "static/media/cherniy.44235573.jpg": "/static/media/cherniy.44235573.jpg",
+    "static/media/kisa.58e39b8d.jpg": "/static/media/kisa.58e39b8d.jpg",
+    "static/media/kosmokot.c1bd4341.jpg": "/static/media/kosmokot.c1bd4341.jpg",
+    "static/media/loader.34fd5549.svg": "/static/media/loader.34fd5549.svg",
+    "static/media/matroskin.02eae83a.jpg": "/static/media/matroskin.02eae83a.jpg",
+    "static/media/ryjik.be8c107c.jpg": "/static/media/ryjik.be8c107c.jpg",
+    "static/media/vasiliy.4f8ede10.jpg": "/static/media/vasiliy.4f8ede10.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.da04aa70.js",
     "static/js/3.ce28992e.chunk.js",
     "static/css/main.c5609ccc.chunk.css",
-    "static/js/main.6628d8a3.chunk.js"
+    "static/js/main.c7c7da0f.chunk.js"
   ]
 }
