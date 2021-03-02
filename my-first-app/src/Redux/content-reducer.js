@@ -330,7 +330,7 @@ const contentReducer = (state = initialState, action) => {
             if (textMes.length) {
                 stateCopy.users[idintificator].posts.posts.unshift({
                     text: action.newPostText,
-                    img: kosmokot,
+                    img: 'https://social-network.samuraijs.com/activecontent/images/users/14853/user-small.jpg?v=7',
                     name: stateCopy.users[idintificator].profileInfo.name,
                     id: 1.1
                 })

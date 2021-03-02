@@ -7,7 +7,7 @@ const Mess = (props) => {
         return (
             <div key={id.toString()} className={message.id === 'my' ? MessStyle.myMes : MessStyle.friendMes}>
                 <div className={MessStyle.div}>
-                    <img className={MessStyle.img} alt='' src={message.id === 'my' ? props.myImg : props.dialog.img} />
+                    <img className={MessStyle.img} alt='' src={message.id === 'my' ? 'https://social-network.samuraijs.com/activecontent/images/users/14853/user-small.jpg?v=7' : props.dialog.img} />
                     <div className={MessStyle.text}>{message.text}</div>
                     <div className={MessStyle.time}>{message.time}</div>
                 </div>
