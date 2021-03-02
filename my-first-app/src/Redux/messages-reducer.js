@@ -1,5 +1,16 @@
+import ryjik from './../images/ryjik.jpg'
+import vasiliy from './../images/vasiliy.jpg'
+import kisa from './../images/kisa.jpg'
+import cherniy from './../images/cherniy.jpg'
+import barsik from './../images/barsik.jpg'
+import matroskin from './../images/matroskin.jpg'
+import kosmokot from './../images/kosmokot.jpg'
+
 const WHAT_FRIEND_DIALOG_SHOW = 'WHAT-FRIEND-DIALOG-SHOW'
 const SEND_MESSAGE = 'SEND-MESSAGE'
+
+
+
 
 
 let initialState = {
@@ -18,49 +29,49 @@ let initialState = {
             to: 'barsik',
             lastMes: '',
             lastMesTime: '',
-            img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg',
+            img: barsik,
         },
         vasiliy: {
             messages: [],
             name: 'Василий',
             to: 'vasiliy',
             lastMes: '',
-            img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg',
-        },
-        semen: {
-            messages: [],
-            name: 'Семен',
-            to: 'semen',
-            lastMes: '',
-            img: 'https://tipik.ru/wp-content/uploads/2019/06/%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE-%D1%81%D1%82%D0%BE%D0%BB%D0%B0-%E2%80%94-%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C008.jpg',
+            img: vasiliy,
         },
         ryjik: {
             messages: [],
             name: 'Рыжик',
             to: 'ryjik',
             lastMes: '',
-            img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg',
+            img: ryjik,
         },
         chernyi: {
             messages: [],
             name: 'Черный',
             to: 'chernyi',
             lastMes: '',
-            img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200',
+            img: cherniy,
         },
         kisa: {
             messages: [],
             name: 'Киса',
             to: 'kisa',
             lastMes: '',
-            img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg',
+            img: kisa,
         },
         matroskin: {
             messages: [],
             name: 'Матроскин',
             to: 'matroskin',
             lastMes: '',
-            img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic',
+            img: matroskin,
+        },
+        kosmokot: {
+            messages: [],
+            name: 'Космокот',
+            to: 'kosmokot',
+            lastMes: '',
+            img: kosmokot,
         },
     },
 }

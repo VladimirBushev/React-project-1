@@ -1,4 +1,3 @@
-import News from './News/News';
 import { Route } from 'react-router-dom';
 import ContentStyle from './Content.module.css';
 import MessagesContainer from './Messages/MessagesContainer';
@@ -7,11 +6,14 @@ import UsersContainer from './Users/UsersContainer';
 import UsersAPIContainer from './Users/UsersAPIContainer'
 import ProfileContainer from './Profile/ProfileContainer';
 import withSuspense from '../../hoc/withSuspense';
+
 const Login = React.lazy(() => import('./Login/Login'));
+const News = React.lazy(() => import('./News/News'));
 
 const Content = () => {    
     return (
         <div className={ContentStyle.content}>
+            <Route exact path='/' render={() => <ProfileContainer/>}/>
             <Route path='/profile/:userId' render={ () => <ProfileContainer/>}/>
             <Route exact path='/profile' render={ () => <ProfileContainer/>}/>
             <Route path='/news' render={withSuspense (News)} />

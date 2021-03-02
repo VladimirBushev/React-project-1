@@ -62,3 +62,8 @@
     background-color: rgb(210, 210, 255);
     cursor: pointer;
 }
+
+.attention {
+    color: red;
+    padding-left: 20px;
+}

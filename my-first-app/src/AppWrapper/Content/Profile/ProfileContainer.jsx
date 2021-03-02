@@ -1,7 +1,7 @@
 import Profile from './Profile';
 import React from 'react'
 import { connect } from 'react-redux';
-import { setUserProfile, publishPost, getUserProfile, updateStatus, getStatus} from '../../../Redux/content-reducer'
+import { setUserProfile, publishPost, getUserProfile, updateStatus, getStatus, loadPhoto, saveProfile} from '../../../Redux/content-reducer'
 import Preloader from '../Users/Preloader';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -30,7 +30,9 @@ class ProfileContainer extends React.Component {
             <>
                 <Preloader isFetching={this.props.usersapi.isFetching} />
                 <Profile {...this.props.content} publishPost={this.props.publishPost} changeStatus={this.props.match.params.userId}
-                isAuth={this.props.auth.isAuth} status={this.props.content.status} updateStatus={this.props.updateStatus}/>
+                isAuth={this.props.auth.isAuth} status={this.props.content.status} updateStatus={this.props.updateStatus}
+                isMyProfile={this.props.auth.userId === this.props.content.profile.userId} loadPhoto={this.props.loadPhoto}
+                saveProfile={this.props.saveProfile}/>
             </>
         )
     }
@@ -44,5 +46,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose (
-    connect(mapStateToProps, { setUserProfile, publishPost, getUserProfile, getStatus, updateStatus }),
+    connect(mapStateToProps, { setUserProfile, publishPost, getUserProfile, getStatus, updateStatus, loadPhoto, saveProfile }),
     withRouter)(ProfileContainer)

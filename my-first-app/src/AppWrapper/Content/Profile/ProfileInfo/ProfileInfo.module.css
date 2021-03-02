@@ -3,9 +3,6 @@
     font-size: 20px;
 }
 
-.profileInfo div {
-    padding: 10px;
-}
 
 .div {
     padding: 10px;
@@ -13,6 +10,8 @@
     box-shadow: 0 2px 4px rgb(168, 168, 168);
     border-radius: 5px;
     font-size: 20px;
+    padding-left: 20px;
+
 }
 
 .name {
@@ -20,7 +19,7 @@
 }
 
 .status {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .input {
@@ -37,4 +36,106 @@
     box-shadow: 0 2px 4px rgb(168 168 168);
     padding: 10px;
     border-radius: 5px;
+    grid-area: Sta;
 }
+
+.info, .infoError {
+
+   margin-top: 5px;
+}
+
+.info textarea, .infoError textarea{
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    background-color: rgb(241, 241, 241);
+}
+
+.info textarea {
+    border-color: rgb(209, 209, 209); 
+}
+
+.infoError textarea{
+    border-color: red;
+}
+
+.checkbox{
+    cursor: pointer;
+}
+
+.checkboxdiv {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.info input, .infoError input {
+    width: 50%;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid;
+    background-color: rgb(241, 241, 241);
+}
+
+.info input {
+    border-color: rgb(209, 209, 209); 
+}
+.infoError input {
+    border-color: red;
+}
+
+
+.label {
+    display: inline-block ;
+    margin: 10px;
+}
+
+.button {
+    font-size: 18px;
+    border-radius: 7px;
+    margin-top: 5px;
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    background-color: rgb(241, 241, 241);
+}
+
+.button:hover{
+    background-color: rgb(210, 210, 255);
+    cursor: pointer;
+}
+
+.contacts {
+    display: inline-block;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+    background-color: rgb(241, 241, 241);
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.contacts:hover{
+    background-color: rgb(210, 210, 255);
+    cursor: pointer;
+}
+
+.infoLabel{
+    margin: 10px 0 10px 0;
+}
+
+.error {
+    color: red;
+    margin-left: 10px;
+}
+

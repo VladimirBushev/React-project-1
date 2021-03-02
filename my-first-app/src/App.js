@@ -5,9 +5,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { initializeApp } from './Redux/app-reducer';
 import Preloader from './AppWrapper/Content/Users/Preloader';
-import { withRouter } from 'react-router-dom';
+import { withRouter, HashRouter  } from 'react-router-dom';
 import { compose } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
 import store from './Redux/redux-store'
 import { Provider } from 'react-redux';
 
@@ -39,13 +38,13 @@ let AppContainer = compose(
   connect(mapStateToProps, { initializeApp }))(App)
 
 const MainApp = (props) => {
-  return <BrowserRouter basename={process.env.PUBLIC_URL}>
+  return <HashRouter>
         <Provider store={store}>
             <React.StrictMode>
                 <AppContainer />
             </React.StrictMode>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default MainApp

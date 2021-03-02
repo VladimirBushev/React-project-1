@@ -28,7 +28,7 @@ const ProfileStatusWithHooks = (props) => {
             { ((props.changeStatus !== undefined) || !props.isAuth) ?
                 <div className={ProfileInfoStyle.statusDiv}>
                     <div>
-                        <span className={ProfileInfoStyle.status} >{status || ''}</span>
+                        <span className={ProfileInfoStyle.status}>{status ? 'Cтатус: ' + status : 'Статус отсутствует'}</span>
                     </div>
                 </div>
                  :
@@ -39,7 +39,10 @@ const ProfileStatusWithHooks = (props) => {
                         </div>
                         :
                         <div>
-                            <span className={ProfileInfoStyle.status} onClick={activateEditMode}>{status || 'Введите ваш статус'}</span>
+                        <div>
+                            <span className={ProfileInfoStyle.status} onClick={activateEditMode}>{ 'Cтатус: ' + status || 'Введите ваш статус'}</span>
+                        </div>
+                        <label className={ProfileInfoStyle.label} >Для редактирования нажмите на статус</label>
                         </div>
                     }
                 </div>

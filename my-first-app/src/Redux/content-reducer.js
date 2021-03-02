@@ -1,21 +1,31 @@
 import { profileAPI } from '../api/api';
 import { toggleIsFetching } from '../Redux/usersapi-reducer'
 
-const PUBLISH_POST = 'PUBLISH-POST'
-const SET_USER_PROFILE = 'SET_USER_PROFILE'
-const SET_STATUS = 'SET_STATUS'
+import kosmokot from './../images/kosmokot.jpg'
+import ryjik from './../images/ryjik.jpg'
+import vasiliy from './../images/vasiliy.jpg'
+import kisa from './../images/kisa.jpg'
+import cherniy from './../images/cherniy.jpg'
+import barsik from './../images/barsik.jpg'
+import matroskin from './../images/matroskin.jpg'
+
+
+const PUBLISH_POST = 'content/PUBLISH-POST'
+const SET_USER_PROFILE = 'content/SET_USER_PROFILE'
+const SET_STATUS = 'content/SET_STATUS'
+const SAVE_PHOTO_SUCCESS = 'content/SAVE_PHOTO_SUCCESS'
 
 let initialState = {
     users: [
         {
             id: 1.1,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: kosmokot,
             },
             profileInfo: {
                 name: 'Космокот',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '12.11.2016',
+                city: 'Москва',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -27,22 +37,22 @@ let initialState = {
             },
             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -52,11 +62,11 @@ let initialState = {
         {
             id: 1.2,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: ryjik,
             },
             profileInfo: {
                 name: 'Рыжик',
-                date: '10.12.2016',
+                date: '4.7.2015',
                 city: 'Санкт-Петербург',
             },
             photos: {
@@ -67,24 +77,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -94,12 +104,12 @@ let initialState = {
         {
             id: 1.3,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: vasiliy,
             },
             profileInfo: {
                 name: 'Василий',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '5.12.2018',
+                city: 'Казань',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -109,24 +119,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -136,12 +146,12 @@ let initialState = {
         {
             id: 1.4,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: kisa,
             },
             profileInfo: {
                 name: 'Киса',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '12.12.2017',
+                city: 'Новосибирск',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -151,24 +161,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -178,12 +188,12 @@ let initialState = {
         {
             id: 1.5,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: cherniy,
             },
             profileInfo: {
                 name: 'Черный',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '7.11.2012',
+                city: 'Самара',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -193,24 +203,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -220,12 +230,12 @@ let initialState = {
         {
             id: 1.6,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: barsik,
             },
             profileInfo: {
                 name: 'Барсик',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '23.1.2015',
+                city: 'Сыктывкар',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -235,24 +245,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
+                    { id: 1.7, name: 'Матроскин', img: matroskin },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
+                    { id: 1.7, name: 'Матроскин', text: 'Текст', img: matroskin },
                 ]
             },
             subscriptions: {
@@ -262,12 +272,12 @@ let initialState = {
         {
             id: 1.7,
             profileCard: {
-                img: 'https://pixelbox.ru/wp-content/uploads/2020/12/ava-vk-cats-90.jpg',
+                img: matroskin,
             },
             profileInfo: {
                 name: 'Матроскин',
-                date: '10.12.2016',
-                city: 'Санкт-Петербург',
+                date: '26.5.2013',
+                city: 'Краснодар',
             },
             photos: {
                 images: ['https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5ce2b140465c3000b3720afb_5ce2b565baeb6600affc7c7f/scale_1200',
@@ -277,24 +287,24 @@ let initialState = {
                     'https://yandex-images.naydex.net/ACy973s70/c28d55Vin1kP/nqH6iPCEstYPJmSAM0aNqUgKCrkKSoWhW58MtlP-AP86Q4ARKd-fbIM5F7kakAkGw_dkyh4KBNhSaiEA1vtde94ADmjUxObWXkLTlbNCqQiIP3_sC9twET_--cY3urF6f8U1JSjbWmnGH9e5urH79GHGg7mp6WYKMJiV5fM-WF8v5C8rEhCip4wVYsHT1ZgYatrba_tcBkH7uL9FE5gjf1ohcLJ4aQi5FJ8Snl0X2KUQlYA5enj3yyBKBmZg_pq_2Ve-mICkYQYtNtAi0jWYO-jr-nl6n-QiGHnMtoEYU_86k0Ng-dnaCgS8wkxdZZsGAreiCLp69goii_bE805JnehlPPhyh5Mk_ZdzMkEVCNnoS7haCs5V8fgK_JWS6bI8y9FjwXk7qpnknXOO7zablxMmwdpJyWS6MvqHFsPOqv0KZy4bQfaztk51sLHRhejp6ApYmGiMBQMoOd4UQBqzzjnBcMDKuFl6ly4wzZ2H2HQBpeFJa8qm-PLKJWXwz2ssemXdOdNUY1SO1fBR8DcaSEu7uVnq7sXzGOpfhWHJUDwLkDBg2kj4aUftMO3fVMlFQuaBOGvZdGvQWrVncIz4n4g3vgpBpIKkjRRhwGO023nIOWo7q71lsTuqf9SCCnEdu-FT83r5-Fs3bFAsLWX6Z7D08Ok6aDZK80ildNLdSo65dkxa0SWztk8ls-BTlagoaJvKG7kPxOAruO1lcctCfdhyEJKI2vrJ9K0QXR4WGrfBlsOIG0glmLJY5DdjTSquKhYfS0Cn4cacRgABscQ6emloGblJjtZAeGuuZwG6kE1b0KDQubhb2ST8cl-d1tjXcVZiCApbVevBWub24e16fJh3TorCpLG0b6VDQHE0izgpKPo4Gk10wGtK_0TgWXBNeyFzUTuJ2rsmjhIvruV6pwNnoUoIKqWI0RlFNVCvetw5R05ak4WyBo0EIBIAdzlq-mrLi6l8NbN7yU-HA',
                 ]
             },
-            friends: {
+             friends: {
                 friends: [
-                    { id: 1.2, name: 'Рыжик', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.3, name: 'Василий', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.4, name: 'Киса', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.5, name: 'Черный', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.6, name: 'Барсик', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.7, name: 'Матроскин', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', img: ryjik },
+                    { id: 1.3, name: 'Василий', img: vasiliy },
+                    { id: 1.4, name: 'Киса', img: kisa },
+                    { id: 1.5, name: 'Черный', img: cherniy },
+                    { id: 1.6, name: 'Барсик', img: barsik },
+                    { id: 1.1, name: 'Космокот', img: kosmokot },
                 ]
             },
             posts: {
                 posts: [
-                    { id: 1.1, name: 'Рыжик', text: 'Текст', img: 'https://www.zastavki.com/pictures/originals/2018Animals___Cats_Large_gray_cat_with_a_surprised_look_123712_.jpg' },
-                    { id: 1.2, name: 'Василий', text: 'Текст', img: 'https://w-dog.ru/wallpapers/6/4/445936490088105/kotik-vzglyad-mechtaet.jpg' },
-                    { id: 1.3, name: 'Киса', text: 'Текст', img: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1Rk3xj3SNsykl6tc1aFKIVZ6aaKTM5SRkZCeTgDn6uOyic' },
-                    { id: 1.4, name: 'Черный', text: 'Текст', img: 'https://neskychno.com/wp-content/uploads/2019/12/wsi-imageoptim-4-35-samie-krasivie-koshki-mira-3-1.jpg' },
-                    { id: 1.5, name: 'Барсик', text: 'Текст', img: 'https://avatars.mds.yandex.net/get-zen_doc/1708265/pub_5e5ff8cc7101ab5f188ec1c9_5e5ffbc115421c7961ba83ad/scale_1200' },
-                    { id: 1.6, name: 'Матроскин', text: 'Текст', img: 'http://img.crazys.info/files/i/2008.1.6/1199621372_wall_50.jpg' },
+                    { id: 1.2, name: 'Рыжик', text: 'Текст', img: ryjik },
+                    { id: 1.3, name: 'Василий', text: 'Текст', img: vasiliy },
+                    { id: 1.4, name: 'Киса', text: 'Текст', img: kisa },
+                    { id: 1.5, name: 'Черный', text: 'Текст', img: cherniy },
+                    { id: 1.6, name: 'Барсик', text: 'Текст', img: barsik },
+                    { id: 1.1, name: 'Космокот', text: 'Текст', img: kosmokot },
                 ]
             },
             subscriptions: {
@@ -303,7 +313,7 @@ let initialState = {
         },
     ],
     profile: {},
-    status: ''
+    status: '',
 }
 
 const contentReducer = (state = initialState, action) => {
@@ -320,8 +330,9 @@ const contentReducer = (state = initialState, action) => {
             if (textMes.length) {
                 stateCopy.users[idintificator].posts.posts.unshift({
                     text: action.newPostText,
-                    img: stateCopy.users[idintificator].profileCard.img,
-                    name: stateCopy.users[idintificator].profileInfo.name
+                    img: kosmokot,
+                    name: stateCopy.users[idintificator].profileInfo.name,
+                    id: 1.1
                 })
                 return stateCopy;
             }
@@ -348,6 +359,12 @@ const contentReducer = (state = initialState, action) => {
                 status: action.status
             }
         }
+        case SAVE_PHOTO_SUCCESS: {
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
+            }
+        }
         default:
             return state;
     }
@@ -356,23 +373,35 @@ const contentReducer = (state = initialState, action) => {
 export const publishPost = (id, newPostText) => ({ type: PUBLISH_POST, id, newPostText })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = (status) => ({ type: SET_STATUS, status })
+export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos })
 
 export const getUserProfile = (userId) => (dispatch) => {
     if (userId <= 1 || userId >= 2) {
         dispatch(toggleIsFetching())
         setTimeout(async () => {
             let response = await profileAPI.getProfile(userId)
-            dispatch(setUserProfile(response.data))
-            dispatch(toggleIsFetching())
+            if (response.status === 200) {
+                dispatch(setUserProfile(response.data))
+                dispatch(toggleIsFetching())
+            }
         }, 500)
     }
 }
 
 export const getStatus = (userId) => async (dispatch) => {
     let response = await profileAPI.getStatus(userId)
-    dispatch(setStatus(response.data))
-
+    if (response.status === 200) {
+        dispatch(setStatus(response.data))
+    }
 }
+
+export const loadPhoto = (photos) => async (dispatch) => {
+    let response = await profileAPI.savePhoto(photos)
+    if (response.data.resultCode === 0) {
+        dispatch(savePhotoSuccess(response.data.data.photos))
+    }
+}
+
 
 export const updateStatus = (status) => async (dispatch) => {
     let response = await profileAPI.updateStatus(status)
@@ -380,6 +409,19 @@ export const updateStatus = (status) => async (dispatch) => {
         dispatch(setStatus(status))
     }
 }
+
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.userId
+    const response = await profileAPI.saveProfile(profile)
+
+    if (response.data.resultCode === 0) {
+        dispatch(getUserProfile(userId))
+    } else {
+        debugger
+        return Promise.reject(response.data.messages[0])
+    }
+}
+
 
 
 export default contentReducer;

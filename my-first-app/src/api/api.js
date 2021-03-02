@@ -18,7 +18,7 @@ export const usersAPI = {
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
-    }, 
+    },  
 }
 
 export const profileAPI = {
@@ -30,6 +30,14 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instance.put(`profile/status`, {status})
+    },
+    savePhoto(photo) {
+        const formData = new FormData()
+        formData.append('', photo)
+        return instance.put(`profile/photo`, formData)
+    },
+    saveProfile(profile) {
+        return instance.put(`profile`, profile)
     }
 }
 

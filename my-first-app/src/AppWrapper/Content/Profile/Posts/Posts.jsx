@@ -13,9 +13,9 @@ const Posts = (props) => {
     }
     return (
         <div className={PostsStyle.posts}>
-            <div className={PostsStyle.header}>
+            {props.isAuth && <div className={PostsStyle.header}>
                 <PostsForm publishPost={props.publishPost} id={props.id}/>
-            </div>
+            </div>}
             {posts}
         </div>
     )

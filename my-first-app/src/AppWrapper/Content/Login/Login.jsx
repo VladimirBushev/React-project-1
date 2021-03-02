@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import loginFormSchema from '../../../Validation/loginFormSchema';
 import loginStyle from './Login.module.css'
 import { connect } from 'react-redux';
-import {login} from './../../../Redux/auth-reducer'
+import { login } from './../../../Redux/auth-reducer'
 import { Redirect } from 'react-router-dom';
 
 const LoginForm = (props) => {
@@ -15,20 +15,20 @@ const LoginForm = (props) => {
             }}
             validateOnBlur
             validationSchema={loginFormSchema}
-            >
+        >
             {({ handleChange, handleBlur, values, errors, touched }) => (
                 <Form className={loginStyle.form} >
                     <div>
                         <Field className={loginStyle.input} onChange={handleChange} value={values.login} name='login' placeholder={'Логин'} />
-                    {touched.login && errors.login && <p className={loginStyle.error}>{errors.login}</p>}
+                        {touched.login && errors.login && <p className={loginStyle.error}>{errors.login}</p>}
                     </div>
                     <div>
                         <Field className={loginStyle.input} onChange={handleChange} onBlur={handleBlur} value={values.password} type='password' name='password' placeholder={'Пароль'} />
-                    {touched.password && errors.password && <p className={loginStyle.error}>{errors.password}</p>}
+                        {touched.password && errors.password && <p className={loginStyle.error}>{errors.password}</p>}
                     </div>
                     <div>
                         <Field className={loginStyle.checkbox} onChange={handleChange} onBlur={handleBlur} type='checkbox' name='rememberMe' />
-                        <div className={loginStyle.checkboxLabel}>запомнить меня</div> 
+                        <div className={loginStyle.checkboxLabel}>запомнить меня</div>
                     </div>
                     <div>
                         <button className={loginStyle.button} type={'submit'} >Войти</button>
@@ -48,7 +48,12 @@ const Login = (props) => {
     return (
         <div className={loginStyle.wrapper}>
             <h1 className={loginStyle.header}>Авторизация</h1>
-            <LoginForm login={props.login} IncorrectEmailOrPassword={props.IncorrectEmailOrPassword}/>
+            <div>
+                <div className={loginStyle.header}>Используйте для авторизации</div>
+                <div className={loginStyle.header}>Login: vladimirbyshev@gmail.com</div>
+                <div className={loginStyle.header}>Paswword: QERKhDxzrg8X </div>
+            </div>
+            <LoginForm login={props.login} IncorrectEmailOrPassword={props.IncorrectEmailOrPassword} />
         </div>
     )
 }
@@ -58,4 +63,4 @@ const mapStateToProps = (state) => ({
     IncorrectEmailOrPassword: state.auth.IncorrectEmailOrPassword
 })
 
-export default connect(mapStateToProps, {login})(Login) 
+export default connect(mapStateToProps, { login })(Login) 
