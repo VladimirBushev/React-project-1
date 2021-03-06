@@ -7,6 +7,25 @@
     margin-top: 10px;
 }
 
+.capthaInput {
+    display: block;
+    margin: 10px;
+    font-size: 25px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    color: rgb(0, 0, 73);
+    outline: none;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+}
+
+.img {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: rgb(209, 209, 209); 
+}
 
 .button, .input {
     margin: 10px;

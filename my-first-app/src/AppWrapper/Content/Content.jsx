@@ -21,6 +21,7 @@ const Content = () => {
             <Route exact path='/users' render={ () => <UsersContainer />}/>
             <Route exact path='/usersapi' render={ () => <UsersAPIContainer />}/>
             <Route exact path='/login' render={withSuspense (Login)}/>
+            <Route path='*' render={() => <div>404 NOT FOUND</div>} />
         </div>
     )
 }

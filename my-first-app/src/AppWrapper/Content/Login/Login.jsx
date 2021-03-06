@@ -8,10 +8,10 @@ import { Redirect } from 'react-router-dom';
 
 const LoginForm = (props) => {
     return (
-        <Formik initialValues={{ login: '', password: '', rememberMe: false }}
+        <Formik initialValues={{ login: '', password: '', rememberMe: false, captcha: ''}}
             onSubmit={(values, { setSubmitting }) => {
                 setSubmitting(false);
-                props.login(values.login, values.password, values.rememberMe)
+                props.login(values.login, values.password, values.rememberMe, values.captcha)
             }}
             validateOnBlur
             validationSchema={loginFormSchema}
@@ -31,8 +31,16 @@ const LoginForm = (props) => {
                         <div className={loginStyle.checkboxLabel}>запомнить меня</div>
                     </div>
                     <div>
+                    <div>{props.captchaUrl && 
+                            <div>
+                                <div className={loginStyle.img}><img  alt='' src={props.captchaUrl}></img></div>
+                                <Field className={loginStyle.capthaInput} placeholder='символы с картинки' value={values.captcha} onChange={handleChange} onBlur={handleBlur} name='captcha'/>
+                            </div>
+                        }</div>
+                    </div>
+                    <div>
                         <button className={loginStyle.button} type={'submit'} >Войти</button>
-                        {props.IncorrectEmailOrPassword ? <div className={loginStyle.error}>Неправильный логин или пароль!</div> : null}
+                        {props.IncorrectEmailOrPassword ? <div className={loginStyle.error}> {props.errorMessages}</div> : null}
                     </div>
                 </Form>
             )}
@@ -53,14 +61,17 @@ const Login = (props) => {
                 <div className={loginStyle.header}>Login: vladimirbyshev@gmail.com</div>
                 <div className={loginStyle.header}>Paswword: QERKhDxzrg8X </div>
             </div>
-            <LoginForm login={props.login} IncorrectEmailOrPassword={props.IncorrectEmailOrPassword} />
+            <LoginForm captchaUrl={props.captchaUrl} login={props.login}
+             IncorrectEmailOrPassword={props.IncorrectEmailOrPassword} errorMessages={props.errorMessages} />
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth,
-    IncorrectEmailOrPassword: state.auth.IncorrectEmailOrPassword
+    IncorrectEmailOrPassword: state.auth.IncorrectEmailOrPassword,
+    errorMessages: state.auth.errorMessages
 })
 
 export default connect(mapStateToProps, { login })(Login) 
