@@ -9,7 +9,7 @@ const Dialogs = (props) => {
     for (let friend in props.dialogs) {
         id++;
         if (props.dialogs[friend].last) {
-            friendsDialogs[props.dialogs[friend].last] = <Dialog key={id.toString()} changeDialog={props.changeDialog} dialog={props.dialogs[friend]} />
+            friendsDialogs[props.dialogs[friend].last] = <Dialog key={Math.random()} changeDialog={props.changeDialog} dialog={props.dialogs[friend]} />
         } else {
             oldFriendsDialogs.push(<Dialog key={id.toString()} dialog={props.dialogs[friend]} changeDialog={props.changeDialog} />)
         }

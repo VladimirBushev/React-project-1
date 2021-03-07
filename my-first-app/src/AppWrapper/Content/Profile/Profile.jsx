@@ -7,10 +7,10 @@ import Photos from './Photos/Photos.jsx'
 import Posts from './Posts/Posts';
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import ProfileStatus from './ProfileInfo/ProfileStatus'
 import ProfileStatusWithHooks from './ProfileInfo/ProfileStatusWithHooks';
 
-const Profile = ({saveProfile, users, publishPost, profile, isAuth, status, changeStatus, updateStatus, isMyProfile, loadPhoto, profileUpdateError}) => {
+const Profile = ({saveProfile, users, publishPost, profile, isAuth, status, changeStatus, 
+    updateStatus, isMyProfile, loadPhoto, profileUpdateError, preloaderIsActive}) => {
     if (users.length > 0) {
         let Arrusers = users.map((user, id) => <Route key={id.toString()} path={`/profile/${user.id}`} render={() =>
             <div className={profileStyle.profile}>
@@ -31,11 +31,13 @@ const Profile = ({saveProfile, users, publishPost, profile, isAuth, status, chan
         )
     }
     if (profile) {
+        
         return (
             <div className={profileStyle.profileRealUser}>
                 <ProfileCard img={profile.photos.large} loadPhoto={loadPhoto} isAuth={isAuth} isMyProfile={isMyProfile} />
                 <ProfileStatusWithHooks isAuth={isAuth} status={status} changeStatus={changeStatus} updateStatus={updateStatus}/>
-                <ProfileInfo profileUpdateError={profileUpdateError} saveProfile={saveProfile}profile={profile} thisIsARealUser={true} isMyProfile={isMyProfile}/>
+                <ProfileInfo profileUpdateError={profileUpdateError} saveProfile={saveProfile}profile={profile}
+                 thisIsARealUser={true} isMyProfile={isMyProfile}/>
             </div>
         )
     }

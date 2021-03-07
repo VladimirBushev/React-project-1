@@ -29,10 +29,12 @@ class ProfileContainer extends React.Component {
         return (
             <>
                 <Preloader isFetching={this.props.usersapi.isFetching} />
-                <Profile {...this.props.content} publishPost={this.props.publishPost} changeStatus={this.props.match.params.userId}
-                isAuth={this.props.auth.isAuth} status={this.props.content.status} updateStatus={this.props.updateStatus}
-                isMyProfile={this.props.auth.userId === this.props.content.profile.userId} loadPhoto={this.props.loadPhoto}
-                saveProfile={this.props.saveProfile}/>
+                <div style={this.props.usersapi.isFetching ? { display: 'none'} : {}}  >
+                    <Profile {...this.props.content} publishPost={this.props.publishPost} changeStatus={this.props.match.params.userId}
+                    isAuth={this.props.auth.isAuth} status={this.props.content.status} updateStatus={this.props.updateStatus}
+                    isMyProfile={this.props.auth.userId === this.props.content.profile.userId} loadPhoto={this.props.loadPhoto}
+                    saveProfile={this.props.saveProfile}/> 
+                </div>
             </>
         )
     }

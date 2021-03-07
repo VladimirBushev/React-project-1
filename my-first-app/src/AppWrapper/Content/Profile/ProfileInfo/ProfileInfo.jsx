@@ -8,7 +8,6 @@ const ProfileInfo = (props) => {
     if (!props.isMyProfile) {
         if (editMode) setEditMode(false)
     }
-
     return (
         <div className={`${ProfileInfoStyle.profileInfo} ${ProfileInfoStyle.div}`}>
             <div className={ProfileInfoStyle.name}>{props.profileInfo ? props.profileInfo.name : props.profile.fullName}</div>

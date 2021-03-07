@@ -22,7 +22,6 @@ const ProfileStatusWithHooks = (props) => {
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value)
     }
-
     return (
         <>
             { ((props.changeStatus !== undefined) || !props.isAuth) ?

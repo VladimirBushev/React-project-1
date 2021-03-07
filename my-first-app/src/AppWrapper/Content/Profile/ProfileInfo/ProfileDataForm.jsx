@@ -23,9 +23,9 @@ const ProfileDataForm = (props) => {
                     props.setEditMode()
                     setError(false)
                 }).catch( (e) => {
+                    debugger
                     let arrayError = e.split('>')
                     let arrayError2 = arrayError[0].split('(')
-                    debugger
                     let errorLocation = arrayError[1].slice(0, arrayError[1].length - 1)
                     let error = arrayError2[0]
                     
@@ -39,24 +39,6 @@ const ProfileDataForm = (props) => {
         >
 
             {({ handleChange, handleBlur, values, errors, touched }) => (
-                // <Form className={ProfileInfoStyle.form} >
-                //     <div>
-                //         <Field className={ProfileInfoStyle.input} onChange={handleChange} value={values.login} name='login' placeholder={'Логин'} />
-                //         {touched.login && errors.login && <p className={ProfileInfoStyle.error}>{errors.login}</p>}
-                //     </div>
-                //     <div>
-                //         <Field className={ProfileInfoStyle.input} onChange={handleChange} onBlur={handleBlur} value={values.password} type='password' name='password' placeholder={'Пароль'} />
-                //         {touched.password && errors.password && <p className={ProfileInfoStyle.error}>{errors.password}</p>}
-                //     </div>
-                //     <div>
-                //         <Field className={ProfileInfoStyle.checkbox} onChange={handleChange} onBlur={handleBlur} type='checkbox' name='rememberMe' />
-                //         <div className={ProfileInfoStyle.checkboxLabel}>запомнить меня</div>
-                //     </div>
-                //     <div>
-                //         <button className={ProfileInfoStyle.button} type={'submit'} >Войти</button>
-                //         {props.IncorrectEmailOrPassword ? <div className={ProfileInfoStyle.error}>Неправильный логин или пароль!</div> : null}
-                //     </div>
-                // </Form>
                 <Form>
                     <div>
                         <div className={touched.fullName && errors.fullName ? ProfileInfoStyle.infoError : ProfileInfoStyle.info }>

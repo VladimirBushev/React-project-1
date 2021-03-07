@@ -3,6 +3,7 @@ body {
     color: rgb(0, 0, 73);
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     height: 100%;
+    overflow: scroll;
 }
 
 html {
